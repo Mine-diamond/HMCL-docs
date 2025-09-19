@@ -62,7 +62,7 @@ toc: true
 
 「资源包」是指可以修改游戏中的多种资源，如**纹理（贴图）、模型、音乐、音效、语言文件**等的文件，能够极大地改变游戏的外观和感觉。而一个好的资源包能极大地提升你的游戏视听体验。
 
-![大致示意图](/assets/img/docs/about-questions/img5.png)
+![大致示意图](/assets/img/docs/about-questions/img5.jpg)
 
 - **如何使用资源包？** 查看 [加载资源包教程](https://zh.minecraft.wiki/w/Tutorial:%E5%8A%A0%E8%BD%BD%E8%B5%84%E6%BA%90%E5%8C%85)。
 - **想制作自己的资源包？** 深入了解 [资源包详细资料](https://zh.minecraft.wiki/w/%E8%B5%84%E6%BA%90%E5%8C%85)。
