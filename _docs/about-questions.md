@@ -8,7 +8,7 @@ toc: true
 
 ![Hits](https://hits.zkitefly.eu.org/?tag=https%3A%2F%2Fdocs.hmcl.net%2Ffaq.html)
 
-> 本文由 LIPiston 编写，Mine-diamond 修改
+> 本文由 LIPiston 编写，Mine-diamond 修改。
 
 ---
 
@@ -25,6 +25,10 @@ toc: true
 ### 如何下载游戏
 
 使用 HMCL 下载 Minecraft 非常简单，只需几步即可完成。 
+
+如果你尚未安装任何实例（即未安装过任何游戏版本），可以直接点击 **「开始游戏」**。HMCL 会自动安装最新正式版 Minecraft 并启动游戏。  
+
+若想下载更多实例（首次下载也可以按此方式操作），请按以下步骤进行：  
 
 在主界面找到并点击左侧的「下载」按钮。
 
@@ -68,7 +72,7 @@ toc: true
 - **想制作自己的资源包？** 深入了解 [资源包详细资料](https://zh.minecraft.wiki/w/%E8%B5%84%E6%BA%90%E5%8C%85)。
 
 你可以在下列网站获取资源包：
-- [curseforge](https://www.curseforge.com/minecraft/texture-packs)
+- [CurseForge](https://www.curseforge.com/minecraft/texture-packs)
 - [Modrinth](https://modrinth.com/resourcepacks)
 
 ### 什么是模组 (Mod)
@@ -90,16 +94,21 @@ HMCL 自动安装与使用模组教程： [跳转](/launcher/auto-installing.htm
 
 或者前往模组包报错排查手册中查看： [跳转](/modpack/error-handbook.html)
 
+如果无法解决错误，尝试 [寻求帮助](help.html)
+
 ### 如何选择游戏的 Java 版本
 
-对于新手玩家，通常你不需要关心这个问题，HMCL 会自动选择最合适的 Java 版本。没有特殊情况请使用默认选择的 Java，你不需要为此进行任何配置  
+HMCL 会自动管理 Java，并针对不同版本的游戏自动选择合适的 Java 版本。若在启动游戏时未检测到合适的 Java，HMCL 也会提示下载 Java（点击“下载”即可完成安装）。对于新手玩家，使用默认设置即可。
 
-如果你确实需要指定 Java 版本：
+如果你确实需要手动安装并指定 Java 版本：  
 
-1. 确保你的电脑上已安装了其他版本的 Java。
-2. 在 HMCL 中，进入 **设置 -> 全局游戏设置**。
-3. 找到 **Java 路径**。这里有两种情况，你安装的 Java 版本很可能已被 HMCL 识别，直接选择即可。
-4. 如果 HMCL 没有识别到你的 Java，那么选择「自定义」。
-5. 点击「浏览」，找到你需要的 Java 安装路径下的 `java.exe` 文件，然后点击确定。
+**安装 Java：**
+1. 进入 **设置 -> Java 管理**，此处会展示 HMCL 安装的或系统中已安装的 Java。  
+2. 如果需要下载 Java，点击「下载 Java」，选择所需的版本，然后点击「确定」。  
+3. 如果你安装了 Java 但是没有被 HMCL 识别，选择「添加 Java」，找到你需要的 Java 安装路径下的 `java.exe` 文件（仅Windows）或 `java` 文件（仅Linux/MacOS），然后点击确定。  
 
-> **重要提示**：如果你在更换 Java 后遇到任何游戏崩溃或无法启动的问题，**请立即切换回 HMCL 默认的 Java 版本**。
+**选择 Java：**
+- 如果希望所有实例都使用同一 Java 版本，进入「设置 -> 全局游戏设置」，选择要使用的 Java。该 Java 将用于所有使用全局游戏设置的实例（一般不推荐）。
+- 如果仅需为某个实例指定 Java 版本，进入该实例的「实例管理界面 -> 游戏设置」（勾选“启用实例特定游戏设置”），然后选择要使用的 Java。该 Java 仅用于该实例的启动。
+
+> **重要提示**：如果你在更换 Java 后遇到任何游戏崩溃或无法启动的问题，**请立即切换回 HMCL 默认的 Java 版本**。  
