@@ -1,75 +1,62 @@
 ---
-title:  "自动安装与模组下载简介"
-date:   2025-11-02 09:06:30 +0800
-author: asdqp233,Mine-diamond
+title: 自动安装与模组下载简介
+date: 2025-11-02 09:06:30 +0800
+author: asdqp233
+contributors:
+  - Mine-diamond
 ---
 
-要为 Minecraft 安装模组，你首先需要安装一个“模组加载器”（例如 NeoForge 或 Fabric），然后再安装你想要的模组。HMCL 为这两个步骤都提供了强大的支持。
+要在 Minecraft 中安装模组，首先需要安装“模组加载器”（如 NeoForge 或 Fabric），然后再添加你想要的模组。HMCL 对这两个步骤都提供了完善且便捷的支持。
 
-在安装前，最关键的一点是**兼容性**。请记住以下核心原则：
+在安装前最重要的是确保兼容性，请牢记以下关键原则：
 
-- 通常，你只能为单个游戏实例安装一种模组加载器。
-- 你下载的**模组**，必须同时兼容你的**游戏版本**（如 1.20.4）和**模组加载器**（如 Fabric）。
+- 通常情况下，一个游戏实例只能安装一种模组加载器。
+- 你下载的模组必须同时兼容对应的游戏版本（例如 1.20.4）和模组加载器（例如 Fabric）。
 
-简单来说，为游戏安装模组总共分三步，本指南将带你逐一完成：
-1. 开启版本隔离，为模组创建一个独立干净的环境。
-2. 安装模组加载器（如 Forge, Fabric）。
-3. 安装你喜欢的模组。
+简单来说安装模组可分为三个步骤，本指南将带你依次完成：
+
+1. 启用版本隔离：为模组创建一个独立、干净的游戏环境
+2. 安装模组加载器（如 Forge 或 Fabric）
+3. 安装模组
 
 ## 启用版本隔离
 
-在安装模组之前，必须开启版本隔离以隔离为不同实例安装的模组，见 [全局版本隔离](/launcher/global-version-isolation.html)
+在安装模组之前，必须先启用版本隔离以避免不同实例之间的模组相互干扰，详细说明请参见[全局版本隔离][~/launcher/isolation]。
 
-## 安装模组加载器  
+## 安装模组加载器
 
 ### 模组加载器简介
 
-首先，让我们先了解常见的模组加载器
+在安装模组之前，先了解几种常见的模组加载器。
 
-`Forge`,`NeoForge`,`Fabric`,`Quilt`,`Cleanroom`,`LiteLoader` 是 6 个常见的 Mod 加载器。  
-`Fabric API`,`QSL/QFAPI` 是两个随 `Fabric` 与 `Quilt` 的官方 API（实际是模组）。
+`Forge`, `NeoForge`, `Fabric`, `Quilt`, `Cleanroom`, `LiteLoader` 是目前常见的六种模组加载器。
 
+`Fabric API` 与 `QSL/QFAPI` 分别是 `Fabric` 与 `Quilt` 的官方 API（本质上也是模组），它们为其它模组提供运行所需的基础功能。
 
-下面是简单介绍：  
+| 模组加载器 | 简介 | 游戏版本 |
+| :--------: | ---- | :------: |
+| ![Forge icon][~/assets/auto-installing/forge]<br>Forge | 历史悠久且功能完善的模组加载器，拥有最庞大的模组生态。推荐在 1.21 之前的版本使用。 | 1.5.2+ |
+| ![NeoForge icon][~/assets/auto-installing/neoforge]<br>NeoForge | Forge 的社区分支在 1.20.1 后独立发展，性能与兼容性更佳，推荐在 1.21 及以后的版本使用。 | 1.20.1+ |
+| ![Fabric icon][~/assets/auto-installing/fabric]<br>Fabric | 轻量级模组加载器，适合安装性能优化类或生存增强类模组。 | 1.16.3+ |
+| ![Quilt icon][~/assets/auto-installing/quilt]<br>Quilt | Fabric 的社区分支，兼顾轻量的同时还提供更多实验性特性。 | 1.16.3+ |
+| ![Fabric api icon][~/assets/auto-installing/fabric]<br>Fabric API<br>![QSL/QFAPI icon][~/assets/auto-installing/quilt]<br>QSL/QFAPI | Fabric 与 Quilt 的功能扩展 API，提供基础接口支持，是大多数此类模组的依赖前置。 | Fabric API<br>1.16.3+<br>QSL/QFAPI<br>1.18.2 - 1.21 |
+| ![Cleanroom icon][~/assets/auto-installing/cleanroom]<br>Cleanroom | 专为 1.12.2 版本设计的 Forge 改进版。 | 1.12.2 |
+| ![LiteLoader icon][~/assets/auto-installing/chicken]<br>LiteLoader | 轻量级模组加载器，曾作为 Forge 的简化替代方案，现已停止维护。 | 1.5.2 - 1.12.2 |
 
-| 模组加载器 | 简单介绍 |
-| --------- | ------- |
-| <span style="white-space: nowrap;"><img src="/assets/img/docs/auto-installing/forge.png" alt="Forge icon" width="16"> Forge</span> | 老牌的模组加载器，功能强大，支持的模组众多，推荐在1.21之前安装。 |
-| <span style="white-space: nowrap;"><img src="/assets/img/docs/auto-installing/neoforge.png" alt="NeoForge icon" width="16"> NeoForge</span> | 1.20.1后Forge的继任者，推荐在1.21版本后安装NeoForge。 |
-| <span style="white-space: nowrap;"><img src="/assets/img/docs/auto-installing/fabric.png" alt="Fabric icon" width="16"> Fabric</span> | 轻型模组加载器，非常适合安装优化模组或纯净生存增强类模组。 |
-| <span style="white-space: nowrap;"><img src="/assets/img/docs/auto-installing/quilt.png" alt="Quilt icon" width="16"> Quilt</span> | Fabric的一个分支，同样轻量。 |
-| <span style="white-space: nowrap;"><img src="/assets/img/docs/auto-installing/fabric.png" alt="Fabric api icon" width="16"> Fabric API</span><br><span style="white-space: nowrap;"><img src="/assets/img/docs/auto-installing/quilt.png" alt="QSL/QFAPI icon" width="16"> QSL/QFAPI</span> | 由于`Fabric`和`Quilt`比较轻功能有限，因此提供了增强功能的api，很多模组依赖于此api。 |
-| <span style="white-space: nowrap;"><img src="/assets/img/docs/auto-installing/cleanroom.png" alt="Cleanroom icon" width="16"> Cleanroom</span> | 1.12.2版本Forge的一个优化代替，提供了相对更强的功能，仅支持1.12.2。 |
-| <span style="white-space: nowrap;"><img src="/assets/img/docs/auto-installing/chicken.png" alt="LiteLoader icon" width="16"> LiteLoader</span> | 轻量模组加载器，为Forge的轻量代替，现在已停止维护。 |
+**兼容性说明：**
 
+- LiteLoader 与 Forge 可以相互兼容，但在部分版本中（例如较新的 Forge 与较旧的 LiteLoader）可能存在兼容性问题，无法同时正常使用。
+- 其余模组加载器之间基本互不兼容，无法同时使用。
 
-支持版本一览：  
+**补充说明：**  
 
-| 模组加载器  | 最老版本| 最新版本    |
-| ---------- | ------ | ------      |
-| <img src="/assets/img/docs/auto-installing/forge@2x.png" alt="Forge icon" width="16"> Forge      | 1.5.2  | 游戏最新版本 |
-| <img src="/assets/img/docs/auto-installing/neoforge@2x.png" alt="NeoForge icon" width="16"> NeoForge   | 1.20.1 | 游戏最新版本 |
-| <img src="/assets/img/docs/auto-installing/fabric@2x.png" alt="Fabric icon" width="16"> Fabric     | 1.16.3 | 游戏最新版本 |
-| <img src="/assets/img/docs/auto-installing/fabric@2x.png" alt="Fabric api icon" width="16"> Fabric api | 1.16.3 | 游戏最新版本 |
-| <img src="/assets/img/docs/auto-installing/quilt@2x.png" alt="Quilt icon" width="16"> Quilt        | 1.16.3 | 游戏最新版本 |
-| <img src="/assets/img/docs/auto-installing/quilt@2x.png" alt="QSL/QFAPI icon" width="16"> QSL/QFAPI  | 1.18.2 | 1.21        |
-| <img src="/assets/img/docs/auto-installing/cleanroom@2x.png" alt="Cleanroom icon" width="16"> Cleanroom  | 1.12.2 |             |
-| <img src="/assets/img/docs/auto-installing/chicken@2x.png" alt="LiteLoader icon" width="16"> LiteLoader | 1.5.2  | 1.12.2      |
-
-
-**兼容性：**
--  ***LiteLoader* 和 *Forge* 是兼容的 (*Forge* 较新版本和 *LiteLoader* 较老版本可能不兼容)，可以同时安装**  
--  **其它所有模组加载器几乎互不兼容，即你无法同时安装两个模组加载器**  
-
-**补充：**  
-非常多的 *Fabric Mod* 或 *Quilt Mod* 都需要 *Fabric API* 或 *QSL/QFAPI*作为前置模组。  
-在安装 Mod 加载器时候如果没有其它原因，建议安装 *Fabric API* 或 *QSL/QFAPI* , 否则很多 *Fabric Mod* 或 *Quilt Mod* 则有可能无法被加载!
+有大量的 Fabric 与 Quilt 模组依赖 Fabric API 或 QSL / QFAPI 因此在安装 Fabric 或 Quilt 加载器时，若无特殊原因强烈建议同时安装相应的 API 模组。
 
 ### 安装新实例时安装模组加载器
 
-当你在安装新的游戏客户端时候, 会看到其中有该版本支持的模组加载器安装选项，点击你想安装的模组加载器，  
+当你在安装新的游戏客户端时候, 会看到其中有该版本支持的模组加载器安装选项：
 
-![AutoInstaller_ModLoader](/assets/img/docs/auto-installing/AutoInstaller_ModLoader.png)
+![AutoInstaller_ModLoader][~/assets/auto-installing/AutoInstaller_ModLoader]
 
 - 点击你想要的加载器（如 Fabric）。
 - 在弹出的版本选择页面，若无特殊需求，**选择最新稳定版**（通常是第一个）。
@@ -83,7 +70,7 @@ author: asdqp233,Mine-diamond
 1.  在 HMCL 主界面，点击「实例管理」，然后选择你想要修改的游戏实例。
 2.  在左侧菜单中，点击「自动安装」。
 
-![Auto_Install_Page](/assets/img/docs/auto-installing/Auto_Install_Page.png)
+![Auto_Install_Page][~/assets/auto-installing/Auto_Install_Page]
 
 - **安装**：点击你想要的加载器图标（如 Forge），选择版本（推荐最新版），然后点击安装。
 - **更新**：点击已安装的加载器，选择一个更新的版本，然后点击安装。
@@ -119,8 +106,7 @@ HMCL 内置了 CurseForge 和 Modrinth 的搜索和下载功能，非常方便�
 
 **注意: 请查看你要下载的模组是否正常你要安装的游戏版本以及模组加载器，否则模组无法被正常加载!**
 
-![AddingModAutomatically](/assets/img/docs/auto-installing/AutoInstaller_ModAutoAdding.png)
-
+![AddingModAutomatically][~/assets/auto-installing/AutoInstaller_ModAutoAdding]
 
 ### 手动安装
 
@@ -140,11 +126,11 @@ HMCL 内置了 CurseForge 和 Modrinth 的搜索和下载功能，非常方便�
 3.  将你下载的 `.jar` 模组文件复制或移动到这个文件夹里。
     （如果 `mods` 文件夹不存在，请自行创建一个。）
 
-![AddingModManually](/assets/img/docs/auto-installing/AutoInstaller_ModManualAdding.png)
+![AddingModManually][~/assets/auto-installing/AutoInstaller_ModManualAdding]
 
 ### 安装OptiFine 或其它光影模组
 
-光影的安装方式略有不同，请参考专门的指南 [光影安装](/launcher/shader.html)
+光影的安装方式略有不同，请参考专门的指南 [光影安装][~/launcher/shader]
 
 ## 安装 Mod 后游戏报错/无法启动
 
@@ -168,4 +154,34 @@ HMCL 内置了 CurseForge 和 Modrinth 的搜索和下载功能，非常方便�
 
 > **重要**：对于向他人求助，千万不要只截图，不要只说“游戏出错怎么办”这种及其笼统的话语。**没有日志，谁也帮不了你。**
 
-![CrashReportPage](/assets/img/docs/auto-installing/Crash_Report_Page.png)
+![CrashReportPage][~/assets/auto-installing/Crash_Report_Page]
+
+<!--{% comment %}-->
+[~/launcher/shader]: /_launcher/shader.md
+[~/launcher/isolation]: /_launcher/isolation.md
+[~/assets/auto-installing/forge]: /assets/img/docs/auto-installing/forge.png
+[~/assets/auto-installing/neoforge]: /assets/img/docs/auto-installing/neoforge.png
+[~/assets/auto-installing/fabric]: /assets/img/docs/auto-installing/fabric.png
+[~/assets/auto-installing/quilt]: /assets/img/docs/auto-installing/quilt.png
+[~/assets/auto-installing/cleanroom]: /assets/img/docs/auto-installing/cleanroom.png
+[~/assets/auto-installing/chicken]: /assets/img/docs/auto-installing/chicken.png
+[~/assets/auto-installing/Auto_Install_Page]: /assets/img/docs/auto-installing/Auto_Install_Page.png
+[~/assets/auto-installing/Crash_Report_Page]: /assets/img/docs/auto-installing/Crash_Report_Page.png
+[~/assets/auto-installing/AutoInstaller_ModLoader]: /assets/img/docs/auto-installing/AutoInstaller_ModLoader.png
+[~/assets/auto-installing/AutoInstaller_ModAutoAdding]: /assets/img/docs/auto-installing/AutoInstaller_ModAutoAdding.png
+[~/assets/auto-installing/AutoInstaller_ModManualAdding]: /assets/img/docs/auto-installing/AutoInstaller_ModManualAdding.png
+<!--{% endcomment %}--{{'>'}}
+[~/launcher/shader]: {% link _launcher/shader.md %}
+[~/launcher/isolation]: {% link _launcher/isolation.md %}
+[~/assets/auto-installing/forge]: {% link /assets/img/docs/auto-installing/forge.png %}
+[~/assets/auto-installing/neoforge]: {% link /assets/img/docs/auto-installing/neoforge.png %}
+[~/assets/auto-installing/fabric]: {% link /assets/img/docs/auto-installing/fabric.png %}
+[~/assets/auto-installing/quilt]: {% link /assets/img/docs/auto-installing/quilt.png %}
+[~/assets/auto-installing/cleanroom]: {% link /assets/img/docs/auto-installing/cleanroom.png %}
+[~/assets/auto-installing/chicken]: {% link /assets/img/docs/auto-installing/chicken.png %}
+[~/assets/auto-installing/Auto_Install_Page]: {% link /assets/img/docs/auto-installing/Auto_Install_Page.png %}
+[~/assets/auto-installing/Crash_Report_Page]: {% link /assets/img/docs/auto-installing/Crash_Report_Page.png %}
+[~/assets/auto-installing/AutoInstaller_ModLoader]: {% link /assets/img/docs/auto-installing/AutoInstaller_ModLoader.png %}
+[~/assets/auto-installing/AutoInstaller_ModAutoAdding]: {% link /assets/img/docs/auto-installing/AutoInstaller_ModAutoAdding.png %}
+[~/assets/auto-installing/AutoInstaller_ModManualAdding]: {% link /assets/img/docs/auto-installing/AutoInstaller_ModManualAdding.png %}
+<!---->
